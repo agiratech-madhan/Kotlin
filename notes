@@ -1,0 +1,21 @@
+we cannot able to inherit class fro another 
+if we want 
+we need add open keyword to prefix class name 
+
+open class Sam{
+fun add():String{
+    return "Sam"
+}
+}
+
+class Sample:Sam(){
+// We can override the peroperty
+
+}
+
+fun main(){
+    val s =object:Sam{
+        override val info:String
+        get()="Sample override by Object"
+    }
+}
