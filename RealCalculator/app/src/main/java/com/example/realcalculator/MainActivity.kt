@@ -16,7 +16,7 @@ class MainActivity : AppCompatActivity() {
        var editingTexts :String=""
         var resultText= binding.ResultText.text
         var editing=resultText.toString()
-         var operator: String = ""
+        var operator: String = ""
 //        var operatorClicked: Boolean = false
         var onResultClicked: Boolean = false
 //  var str:String
