@@ -1,43 +1,26 @@
 package eu.tutorials.interfacestest
-
-interface ICardCashBack {
-    fun getCashbackValue(): Float
-}
-
-enum class CreditCardType(val color: String, val maxLimit: Int = 1000000): ICardCashBack {
-    SILVER("gray", 50000) {
-        override fun getCashbackValue(): Float = 0.02f
-    },
-    GOLD("gold"){
-        override fun getCashbackValue(): Float = 0.04f
-    },
-    PLATINUM("black"){
-        override fun getCashbackValue(): Float = 0.06f
-    }
-}
-
-
 fun main() {
+    val x=intArrayOf(1,3,4,4,5,55,4)
+    val fruits=arrayOf(Fruits("Madhan", 22),Fruits("Madhan", 22),)
+    for(x in fruits.indices){
+        println("${fruits[x]}")
+    }
+    print(fruits[0].age)
 
-    /* Access properties and methods */
-    println(CreditCardType.SILVER.color)    // gray
-    println(CreditCardType.SILVER.getCashbackValue())   // 0.02
+    var myArray = Array<Int>(4) { 9 }   // Mutable. Fixed Size.
+    myArray[0] = 32
+    myArray[3] = 54
+    myArray[1] = 11
 
-    /* Enum constants are objects of enum class type. */
-    val peterCardType: CreditCardType = CreditCardType.GOLD
+    for (element in myArray) {              // Using individual elements (Objects)
+        println(element)
+    }
 
-    /* Each enum object has two properties: ordinal and name */
-    println(CreditCardType.GOLD.ordinal)
-    println(CreditCardType.GOLD)    // OR CreditCardType.GOLD.name
+    println()
 
-    /* Each enum object has two methods: values() and valueOf() */
-    val myConstants: Array<CreditCardType> = CreditCardType.values()
-    myConstants.forEach { println(it) }
-
-    /* Using in 'when' statement */
-    when(peterCardType) {
-        CreditCardType.SILVER -> println("Peter has silver card")
-        CreditCardType.GOLD -> println("Peter has gold card")
-        CreditCardType.PLATINUM -> println("Peter has platinum card")
+    for (index in 0..myArray.size - 1) {
+        println(myArray[index])
     }
 }
+
+data class Fruits(val name:String, val age:Int)
